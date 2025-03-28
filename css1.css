@@ -1,0 +1,160 @@
+body {
+    font-family: 'Poppins', sans-serif;
+    background: linear-gradient(120deg, #0f2027, #203a43, #2c5364);
+    height: 100vh;
+    display: block;
+    justify-content: center;
+    align-items: center;
+    margin: 0;
+    color: white;
+    overflow: hidden;
+    padding: 10%;
+}
+
+/* 💎 Effet Glassmorphism */
+.container {
+    background: rgba(255, 255, 255, 0.1);
+    padding: 25px;
+    border-radius: 15px;
+    text-align: center;
+    width: 350px;
+    backdrop-filter: blur(10px);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+    transition: 0.3s;
+}
+
+.container:hover {
+    transform: scale(1.02);
+}
+
+/* 🔍 Barre de recherche */
+input {
+    width: 100%;
+    padding: 12px;
+    border: none;
+    border-radius: 8px;
+    outline: none;
+    font-size: 16px;
+    margin-bottom: 10px;
+    background: rgba(255, 255, 255, 0.2);
+    color: white;
+    text-align: center;
+}
+.suggestions-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    background: rgba(255, 255, 255, 0.2);
+    border-radius: 8px;
+    position: absolute;
+    width: 80%;
+    max-height: 200px;
+    overflow-y: auto;
+    z-index: 1000;
+}
+
+.suggestions-list li {
+    padding: 10px;
+    cursor: pointer;
+    transition: 0.3s;
+    color: white;
+    background: rgba(255, 255, 255, 0.1);
+}
+
+.suggestions-list li:hover {
+    background: rgba(255, 255, 255, 0.3);
+}
+
+/* ✨ Bouton stylé */
+button {
+    padding: 12px 20px;
+    border: none;
+    border-radius: 8px;
+    background: #ff9800;
+    color: white;
+    font-size: 16px;
+    cursor: pointer;
+    transition: 0.3s;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    box-shadow: 0 4px 15px rgba(255, 152, 0, 0.3);
+}
+
+button:hover {
+    background: #e68900;
+    box-shadow: 0 6px 20px rgba(255, 152, 0, 0.5);
+}
+
+/* 🌤️ Animation des résultats météo */
+.weather-info {
+    margin-top: 20px;
+    display: none;
+    opacity: 0;
+    transform: translateY(-20px);
+    transition: opacity 0.6s ease, transform 0.6s ease;
+}
+
+/* ☁️ Icône météo */
+#weatherIcon {
+    width: 100px;
+    height: 100px;
+    filter: drop-shadow(0 0 8px rgba(255, 255, 255, 0.5));
+}
+
+/* 📝 Texte des prévisions */
+#cityName {
+    font-size: 24px;
+    font-weight: bold;
+    text-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
+}
+
+#temperature {
+    font-size: 28px;
+    font-weight: bold;
+    color: #ffcc00;
+}
+
+#description {
+    font-size: 18px;
+    text-transform: capitalize;
+    opacity: 0.9;
+}
+
+/* ⏳ Loader animé */
+.loader {
+    display: none;
+    border: 5px solid rgba(255, 255, 255, 0.3);
+    border-radius: 50%;
+    border-top: 5px solid white;
+    width: 40px;
+    height: 40px;
+    animation: spin 1s linear infinite;
+    margin: 20px auto;
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+/* 📱 Responsive */
+@media (max-width: 600px) {
+    .container {
+        width: 90%;
+        padding: 15px;
+    }
+
+    input {
+        font-size: 14px;
+    }
+
+    button {
+        font-size: 14px;
+        padding: 10px;
+    }
+
+    #weatherIcon {
+        width: 80px;
+        height: 80px;
+    }
+}
